@@ -14,4 +14,4 @@ crash.log
 
 # Sensitive files
 *.pem.terraform/
-.terraform/
+.terraform/*
