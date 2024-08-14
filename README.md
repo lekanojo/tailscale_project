@@ -30,17 +30,18 @@ A personal Tailnet was also created to manage resources from any devices; i.e we
 
 Begin by cloning this repository to your local machine:
 
+```bash
 git clone https://github.com/yourusername/tailscale_project.git
 cd tailscale_project
 
 2. **Terraform Variables**:
 [Terraform Variables: Create a terraform.tfvars file in the root directory to define the following variables](#terraform-variables)
-
+```bash
 aws_region = "us-east-1"  
 aws_profile = "your-aws-profile"  
 ssh_private_key = "path-to-your-private-key"
 
-
+```bash
 aws_region      = "us-east-1"
 aws_profile     = "your-aws-profile"
 ssh_private_key = "~/.ssh/ts-key.pem"
@@ -57,7 +58,7 @@ ssh_private_key = "~/.ssh/ts-key.pem"
    After the infrastructure is created, you can SSH into the EC2 instances:
 
   Tailscale Router (Public EC2 Instance):
-
+```bash
  ssh -i /path/to/ts-key.pem ubuntu@<tailscale_router_public_ip>
 
 Tailscale Device (Private EC2 Instance):
