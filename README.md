@@ -34,7 +34,12 @@ git clone https://github.com/yourusername/tailscale_project.git
 cd tailscale_project
 
 2. **Terraform Variables**:
-Create a terraform.tfvars file in the root directory to define the following variables:
+[Terraform Variables: Create a terraform.tfvars file in the root directory to define the following variables](#terraform-variables)
+
+aws_region = "us-east-1"  
+aws_profile = "your-aws-profile"  
+ssh_private_key = "path-to-your-private-key"
+
 
 aws_region      = "us-east-1"
 aws_profile     = "your-aws-profile"
