@@ -33,18 +33,21 @@ Begin by cloning this repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/tailscale_project.git
 cd tailscale_project
+```
 
 2. **Terraform Variables**:
-[Terraform Variables: Create a terraform.tfvars file in the root directory to define the following variables](#terraform-variables)
+[Terraform Variables: Create a terraform.tfvars file in the root directory to define the following variables:
 ```bash
 aws_region = "us-east-1"  
 aws_profile = "your-aws-profile"  
 ssh_private_key = "path-to-your-private-key"
+```
 
 ```bash
 aws_region      = "us-east-1"
 aws_profile     = "your-aws-profile"
 ssh_private_key = "~/.ssh/ts-key.pem"
+```
 
 
 3. **Terraform Initialization**:
@@ -60,6 +63,7 @@ ssh_private_key = "~/.ssh/ts-key.pem"
   Tailscale Router (Public EC2 Instance):
 ```bash
  ssh -i /path/to/ts-key.pem ubuntu@<tailscale_router_public_ip>
+```
 
 Tailscale Device (Private EC2 Instance):
 First, SSH into the Tailscale Router, then connect to the private instance from there.
@@ -72,14 +76,14 @@ Type 'Yes' when prompted to confirm the destruction
 ## Components
 
 1. **AWS Provider Configuration**: Defines the AWS provider and configures it using variables for the region and profile.
-
+```bash
    provider "aws" {
   region  = var.aws_region
   profile = var.aws_profile
 }
-
+```
 2. **VPC**: Creates a VPC with DNS support and hostnames enabled.
-
+```bash
 resource "aws_vpc" "main_vpc" {
   cidr_block = "10.0.0.0/16"
   enable_dns_support = true
@@ -89,6 +93,9 @@ resource "aws_vpc" "main_vpc" {
     Name = "main-vpc"
   }
 }
+```
+
+
 
 3. Subnets
 Public Subnet:
